@@ -17,6 +17,10 @@ const Home = () => {
     })
   });
 
+  portis.onLogin((walletAddress, email, reputation) => {
+    console.log(walletAddress, email, reputation);
+  });
+
   web3.eth.getAccounts((accounts) => {
     console.log(accounts);
   })
