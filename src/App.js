@@ -3,7 +3,6 @@ import logo from './logo.svg';
 import Navigation from './navigation/navigation';
 import { ThemeProvider, StyleReset } from 'atomize';
 
-
 function App() {
   return (
     <>
