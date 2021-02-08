@@ -1,4 +1,18 @@
-import React, { Component, useState } from 'react';
-import { Div, StyleReset, ThemeProvider, Button } from "atomize";
+import React, { Component } from 'react';
 
-import { web3, portis } from '../services/web3';
+
+class Register extends Component {
+
+
+  render() {
+
+    return(
+      <div>
+        join bls
+      </div>
+    );
+  }
+
+}
+
+export default Register;

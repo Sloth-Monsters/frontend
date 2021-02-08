@@ -1,18 +1,17 @@
 import React, { Component } from 'react';
 
 
-class Dashboard extends Component {
-
+class Browse extends Component {
 
   render() {
 
     return(
       <div>
-        much summary
+        List all stuff
       </div>
     );
   }
 
 }
 
-export default Dashboard;
+export default Browse;

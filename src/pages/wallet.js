@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 
 
-class Dashboard extends Component {
-
+class Wallet extends Component {
 
   render() {
 
     return(
       <div>
-        much summary
+        so moni
       </div>
     );
   }
 
+
 }
 
-export default Dashboard;
+export default Wallet;

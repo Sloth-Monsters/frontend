@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 
 
-class Dashboard extends Component {
+class TasteProfile extends Component {
 
 
   render() {
 
     return(
       <div>
-        much summary
+        very taste
       </div>
     );
   }
 
 }
 
-export default Dashboard;
+export default TasteProfile;
