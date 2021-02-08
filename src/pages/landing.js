@@ -7,32 +7,12 @@ import Footer from '../components/footer';
 
 class Landing extends Component {
 
-  setAddress = (addr) => {
-    this.setState({
-      address: addr
-    })
-  }
-  
-  setBalance = (bal) => {
-    this.setState({
-      balance: bal
-    });
-  }
-
-  state = {
-    isAuth: this.props.authenticated,
-    address: null,
-    balance: null,
-    setAddress: this.setAddress,
-    setBalance: this.setBalance
-  }
-
   render() {
     return (
       <div>
         <Header />
-        <Home super={this.state} />
-        <Footer super={this.state} />
+        <Home />
+        <Footer />
       </div>
     );
   }

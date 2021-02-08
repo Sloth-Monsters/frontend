@@ -3,6 +3,8 @@ import { ThemeProvider, StyleReset } from 'atomize';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import React, { Component, useState } from 'react';
 
+
+import globalStateContext from './context'
 import Landing from './pages/landing';
 import Register from './pages/register';
 import Dashboard from './pages/dashboard';
@@ -18,10 +20,9 @@ import './App.css';
 const globalState = {
   isAuth: false,
   email: null,
-  address: null
+  address: null,
+  balance: null
 };
-
-const globalStateContext = React.createContext(globalState);
 
 class App extends Component {
 
