@@ -2,6 +2,7 @@ import React, { Component, useState } from 'react';
 import { Div, StyleReset, ThemeProvider, Button } from "atomize";
 
 import { ShowPortis, LoginPortis } from './portis';
+import List from './list';
 // import { render } from '@testing-library/react';
 
 class Home extends Component {
@@ -9,18 +10,17 @@ class Home extends Component {
   render() {
 
     return (
-      <main>
-        <div class="section-header pb-6 bg-primary overflow-hidden text-center border-bottom border-light">
-          <div class="container z-2">
-            {/* {msg} */}
-          </div>
-          <div class="row justify-content-center">
-            <LoginPortis super={this.props.super}/>
+      <>
+        {this.props.authenticated ? (
+          <></>
+        ) : (
             <ShowPortis />
-          </div>
-        </div>
-      </main>
-    );  
+
+          )}
+        <List />
+      </>
+
+    );
   }
 
 }
