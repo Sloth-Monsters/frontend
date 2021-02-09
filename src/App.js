@@ -1,5 +1,5 @@
 import logo from './logo.svg';
-// import { StyleReset } from 'atomize';
+import { StyleReset } from 'atomize';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import React, { Component } from 'react';
 
