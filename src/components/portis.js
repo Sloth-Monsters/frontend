@@ -1,7 +1,7 @@
 import React, { Component, useState } from 'react';
 import { web3, portis } from '../services/web3';
 
-import globalStateContext from '../context'
+import globalContext from '../context'
 
 class ShowPortis extends Component {
   
@@ -22,25 +22,17 @@ class ShowPortis extends Component {
 
 class LoginPortis extends Component {
   
-  static contextType = globalStateContext;
-  
   portisLogin = () => {
     portis.provider.enable();
     
     portis.onLogin((walletAddress, email, reputation) => {
-      // this.props.super.isAuth = true
-      // this.props.super.setAddress(walletAddress);
-      // this.props.super.setAddress(walletAddress);
-      // web3.eth.getBalance(walletAddress).then( (balance) => {
-      //   this.props.super.setBalance(Number(web3.utils.fromWei(balance)))
-      // });
-      this.context.isAuth = true;
-      this.context.address = walletAddress;
-      this.context.email = email;
-      web3.eth.getBalance(walletAddress).then( (balance) => {
-        this.context.balance = Number(web3.utils.fromWei(balance))
-      });
-      console.log('Logged in - ' + walletAddress, email, reputation)
+      this.context.toggleAuth();
+      web3.eth.getBalance(walletAddress)
+        .then( (balance) => {
+          this.context.authenticated(walletAddress,balance);
+        });
+      console.log('Portis Login Successful!! Current context -');
+      console.log(this.context)
     });
   }
 
@@ -56,9 +48,8 @@ class LoginPortis extends Component {
       </button>
     );
   }
-
-
-
 }
+
+LoginPortis.contextType = globalContext;
 
 export { ShowPortis, LoginPortis };

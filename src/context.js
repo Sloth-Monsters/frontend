@@ -1,5 +1,22 @@
 import React from 'react';
 
-const globalStateContext = React.createContext({});
+let globul = {
+  
+  /* Portis Login Context */
+  
+  isAuth: null,
+  address: null,
+  balance: null,
+  
+  toggleAuth: () => {},
+  authenticated: () => {},
 
-export default globalStateContext;
+  /* Cermaic Context */
+
+  email: null
+
+}
+
+const globalContext = React.createContext(globul);
+
+export default globalContext;

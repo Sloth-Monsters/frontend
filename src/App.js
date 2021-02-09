@@ -1,10 +1,9 @@
 import logo from './logo.svg';
-import { ThemeProvider, StyleReset } from 'atomize';
+import { StyleReset } from 'atomize';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import React, { Component, useState } from 'react';
+import React, { Component } from 'react';
 
 
-import globalStateContext from './context'
 import Landing from './pages/landing';
 import Register from './pages/register';
 import Dashboard from './pages/dashboard';
@@ -13,23 +12,43 @@ import Review from './pages/reviews';
 import Profile from './pages/profile';
 import Wallet from './pages/wallet';
 import TasteProfile from './pages/trails';
-
 import './index.css';
 import './App.css';
 
-const globalState = {
-  isAuth: false,
-  email: null,
-  address: null,
-  balance: null
-};
+import globalContext from './context'
 
 class App extends Component {
 
+  constructor(props) {
+    super(props);
+
+    this.toggleAuth = () => { this.setState(
+      state => ({ isAuth: state.isAuth? false:true })
+    )};
+
+    this.authenticated = (a,b) => { 
+      this.setState( state => ({    
+        address: a,
+        balance: b
+      })
+    )}
+
+    this.state = { // See './context.js#globul'
+      isAuth: false,
+      address: null,
+      balance: null,
+      toggleAuth: this.toggleAuth,
+      authenticated: this.authenticated,
+
+      email: null
+    }
+  }
+
+  
   render() {
     
     return (
-      <globalStateContext.Provider value={globalState}>
+      <globalContext.Provider value={this.state}>
         <StyleReset />
         <Router>
           <Route exact path="/" component={Landing} />
@@ -44,7 +63,7 @@ class App extends Component {
           <Route exact path="/monies" component={Wallet} />
           <Route exact path="/trails" component={TasteProfile} />
         </Router>
-      </globalStateContext.Provider>
+      </globalContext.Provider>
     );
   }
 }

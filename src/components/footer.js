@@ -3,12 +3,11 @@ import React, { Component } from 'react';
 import { Div, StyleReset, ThemeProvider, Button } from "atomize";
 import { render } from '@testing-library/react';
 
-import globalStateContext from '../context'
+
+import { UserInfo } from './info'
 
 
 class Footer extends Component {
-
-    static contextType = globalStateContext;
 
     render() {
         return (
@@ -19,15 +18,7 @@ class Footer extends Component {
                             {/* does not update on state update, props is static lmao */}
                             <strong>Logged In User::</strong>
                             <br/>
-                            <globalStateContext.Consumer>
-                                {value => (
-                                    <p>
-                                        Address :: {this.context.address}
-                                        <br/>
-                                        Balance :: {this.context.balance}
-                                    </p>
-                                )}
-                            </globalStateContext.Consumer>
+                            <UserInfo />
                             <br/>
                         </p>
                         <ul class="d-flex list-unstyled mb-5 mb-lg-0">
