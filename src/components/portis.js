@@ -34,6 +34,10 @@ class LoginPortis extends Component {
       console.log('Portis Login Successful!! Current context -');
       console.log(this.context)
     });
+
+    portis.onError((err) => {
+      console.log("This is an error -", err)
+    })
   }
 
   render() {

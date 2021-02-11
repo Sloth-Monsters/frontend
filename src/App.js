@@ -3,7 +3,6 @@ import { StyleReset } from 'atomize';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import React, { Component } from 'react';
 
-
 import Landing from './pages/landing';
 import Register from './pages/register';
 import Dashboard from './pages/dashboard';
