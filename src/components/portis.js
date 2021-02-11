@@ -29,6 +29,7 @@ class LoginPortis extends Component {
       this.context.toggleAuth();
       web3.eth.getBalance(walletAddress)
         .then( (balance) => {
+          balance = Number(web3.utils.fromWei(balance))
           this.context.authenticated(walletAddress,balance);
         });
       console.log('Portis Login Successful!! Current context -');

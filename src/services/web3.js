@@ -14,4 +14,22 @@ export const sf = new SuperfluidSDK.Framework({
     tokens: ['fDAI', 'fUSDC']
 });
 
+// from -> address
+// to -> address
+// value -> amount of coin
+// coin  -> "dai" or "usdc"
+export const transaction = (from, to, value, coin) => {
+    web3.eth.sendTransaction({
+        from: from,
+        to: to, 
+        value: web3.toWei(value, coin), 
+    }, function(err, transactionHash) {
+        if (err) { 
+            console.log(err); 
+        } else {
+            console.log(transactionHash);
+        }
+    });
+}
+
 sf.initialize()
