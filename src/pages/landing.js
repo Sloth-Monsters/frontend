@@ -7,6 +7,10 @@ import globalContext from '../context'
 
 import initCeramic from '../services/ceramic'
 import { sf } from '../services/web3';
+import { Button } from 'ui-neumorphism'
+
+import CardView from '../components/cardview';
+import ProfileView from '../components/profileview';
 
 class Landing extends Component {
 
@@ -23,16 +27,23 @@ class Landing extends Component {
         </div>
         <div className="row justify-content-center">
           <LoginPortis />
-          <button 
-            className="btn btn-primary btn-pill text-info mr-2 mb-2" 
+          <Button 
+            dark 
+            rounded 
             type="button" 
             onClick={() => { this.props.history.push('/browse') }}
-          >
-            just browse
-          </button>
+            >
+              Just Browse
+            </Button>
         </div>
         <div className="row justify-content-center">
           <UserInfo />
+        </div>
+        <div>
+          <CardView />
+        </div>
+        <div>
+          <ProfileView />
         </div>
       </>
     );
