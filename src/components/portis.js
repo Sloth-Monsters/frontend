@@ -10,7 +10,7 @@ class ShowPortis extends Component {
   render() {
     return(
       <button 
-        class="btn btn-primary btn-pill text-info mr-2 mb-2" 
+        className="btn btn-primary btn-pill text-info mr-2 mb-2" 
         type="button" 
         onClick={this.callPortis}
       >
@@ -26,13 +26,11 @@ class LoginPortis extends Component {
     portis.provider.enable();
     
     portis.onLogin((walletAddress, email, reputation) => {
-      this.context.toggleAuth();
       web3.eth.getBalance(walletAddress)
         .then( (balance) => {
-          this.context.authenticated(walletAddress,balance);
-        });
-      console.log('Portis Login Successful!! Current context -');
-      console.log(this.context)
+          balance = Number(web3.utils.fromWei(balance))
+          this.context.authenticated(walletAddress, balance);
+      });
     });
 
     portis.onError((err) => {
@@ -44,7 +42,7 @@ class LoginPortis extends Component {
     
     return(
       <button 
-        class="btn btn-primary btn-pill text-info mr-2 mb-2" 
+        className="btn btn-primary btn-pill text-info mr-2 mb-2" 
         type="button" 
         onClick={this.portisLogin}
       >
@@ -52,8 +50,31 @@ class LoginPortis extends Component {
       </button>
     );
   }
-}
+}; LoginPortis.contextType = globalContext;
 
-LoginPortis.contextType = globalContext;
+class LogoutPortis extends Component {
+  
+  portisLogout = () => {
+    // portis.provider.enable();
+    portis.logout();
+    portis.onLogout(() => {
+      this.context.authenticated(null,null);
+    });
+  }
 
-export { ShowPortis, LoginPortis };
+  render() {
+    
+    return(
+      <button 
+        className="btn btn-primary btn-pill text-info mr-2 mb-2" 
+        type="button" 
+        onClick={this.portisLogout}
+      >
+        logout of portis
+      </button>
+    );
+  }
+}; LogoutPortis.contextType = globalContext;
+
+
+export { ShowPortis, LoginPortis, LogoutPortis };

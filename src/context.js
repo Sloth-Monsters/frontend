@@ -2,13 +2,11 @@ import React from 'react';
 
 let globul = {
   
-  /* Portis Login Context */
+  /* Authentication Context */
   
   isAuth: null,
   address: null,
-  balance: null,
-  
-  toggleAuth: () => {},
+  balance: null,  
   authenticated: () => {},
 
   /* Cermaic Context */
@@ -16,6 +14,13 @@ let globul = {
   email: null
 
 }
+
+let connects = {
+  ceramic: null,
+  idx: null,
+  portis: null
+}
+
 
 const globalContext = React.createContext(globul);
 

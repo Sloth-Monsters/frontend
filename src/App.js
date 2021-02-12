@@ -21,12 +21,9 @@ class App extends Component {
   constructor(props) {
     super(props);
 
-    this.toggleAuth = () => { this.setState(
-      state => ({ isAuth: state.isAuth? false:true })
-    )};
-
-    this.authenticated = (a,b) => { 
+    this.authenticated = (a,b) => {
       this.setState( state => ({    
+        isAuth: !state.isAuth,
         address: a,
         balance: b
       })
@@ -34,12 +31,10 @@ class App extends Component {
 
     this.state = { // See './context.js#globul'
       isAuth: false,
-      address: null,
-      balance: null,
-      toggleAuth: this.toggleAuth,
+      address: '',
+      balance: 0,
       authenticated: this.authenticated,
-
-      email: null
+      email: ''
     }
   }
 
