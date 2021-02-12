@@ -2,6 +2,7 @@ import React, { Component, useState } from 'react';
 import { web3, portis } from '../services/web3';
 
 import { globalContext } from '../context'
+import { Card, Button } from 'ui-neumorphism'
 
 class ShowPortis extends Component {
   
@@ -9,13 +10,14 @@ class ShowPortis extends Component {
 
   render() {
     return(
-      <button 
-        className="btn btn-primary btn-pill text-info mr-2 mb-2" 
+      <Button 
+        dark 
+        rounded 
         type="button" 
         onClick={this.callPortis}
-      >
-        see portis account
-      </button>
+        >
+          see portis account
+        </Button>
     );
   }
 }
@@ -41,13 +43,14 @@ class LoginPortis extends Component {
   render() {
     
     return(
-      <button 
-        className="btn btn-primary btn-pill text-info mr-2 mb-2" 
+      <Button 
+        dark 
+        rounded 
         type="button" 
         onClick={this.portisLogin}
-      >
-        login with portis
-      </button>
+        >
+          login with portis
+        </Button>
     );
   }
 }; LoginPortis.contextType = globalContext;

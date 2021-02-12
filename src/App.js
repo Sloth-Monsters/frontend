@@ -2,7 +2,6 @@ import logo from './logo.svg';
 import { StyleReset } from 'atomize';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import React, { Component } from 'react';
-
 import Landing from './pages/landing';
 import Register from './pages/register';
 import Dashboard from './pages/dashboard';
@@ -13,6 +12,9 @@ import Wallet from './pages/wallet';
 import TasteProfile from './pages/trails';
 import './index.css';
 import './App.css';
+
+import { overrideThemeVariables } from 'ui-neumorphism'
+import 'ui-neumorphism/dist/index.css'
 
 import { globalContext } from './context'
 
@@ -116,6 +118,21 @@ class App extends Component {
       update: this.update,
       reset: this.reset
     }
+  }
+
+  componentDidMount() {
+    // takes an object of css variable key-value pairs
+    overrideThemeVariables({
+      '--light-bg': '#292E35',
+      '--light-bg-dark-shadow': '#93a5be',
+      '--light-bg-light-shadow': '#D1D9E6',
+      '--dark-bg': '#292E35',
+      '--dark-bg-dark-shadow': '#21252a',
+      '--dark-bg-light-shadow': '#313740',
+      '--primary': '#8672FB',
+      '--primary-dark': '#4526f9',
+      '--primary-light': '#c7befd'
+    })
   }
 
   

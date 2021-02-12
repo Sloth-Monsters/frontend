@@ -5,7 +5,7 @@ import { IDX } from '@ceramicstudio/idx';
 const initCeramic = async (addr) => {
 
   /**** Ceramic Client ****/
-  const CERAMIC_URL = "http://localhost:3000" // TODO :: change
+  const CERAMIC_URL = "https://ceramic-clay.3boxlabs.com" // TODO :: change
   /* community dev :: https://ceramic-clay.3boxlabs.com :: R/W claynet, wiped often
     persistent storage :: https://yourEndpoint.com :: R/W claynet 
     localhost:7007 :: duh */
