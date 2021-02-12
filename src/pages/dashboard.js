@@ -11,16 +11,16 @@ class Dashboard extends Component {
   
   componentDidMount() {    
     if(this.context.isAuth) {
-      initCeramic(this.context.address).then( (ceramic, idx) => {
-        console.log(ceramic)
-        console.log(idx)
+      initCeramic(this.context.address).then( (result) => {
+        console.log(result)
         this.setState({
-          ceramic: ceramic,
-          idx: idx
+          ceramic: result[0],
+          idx: result[1],
+          writes: result[1]
         }) // TODO move to connectionContext
       })
     }
-    sf.initialize() // TODO :: init only if subscribed
+    // sf.initialize() // TODO :: init only if subscribed
   }
 
 
