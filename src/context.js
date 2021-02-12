@@ -1,27 +1,69 @@
 import React from 'react';
 
 let globul = {
-  
-  /* Authentication Context */
-  
+
+  /* autthentication */
+
   isAuth: null,
   address: null,
-  balance: null,  
-  authenticated: () => {},
+  balance: null,
+  sign_addr: null,
 
-  /* Cermaic Context */
+  /* connections */
 
-  email: null
-
-}
-
-let connects = {
   ceramic: null,
   idx: null,
-  portis: null
+  portis: null,
+  web3: null,
+  superf: null,
+
+  /* user */
+
+  name: null,
+  email: null,
+  three_id: null,
+  sign: null,
+
+  /* promises */
+
+  portis: () => {},
+  authenticated: () => {},
+  ceramic: () => {},
+  update: () => {},
+  reset: () => {}
+}
+
+export const globalContext = React.createContext(globul);
+
+
+/* TODO :: if ever
+
+let auth = {
+  isAuth: null,
+  address: null,
+  balance: null,
+  sign_addr: null
 }
 
 
-const globalContext = React.createContext(globul);
+let conn = {
+  ceramic: null,
+  idx: null,
+  portis: null,
+  web3: null,
+  super: null
+}
 
-export default globalContext;
+let user = {
+  name: null,
+  email: null,
+  three_id: null,
+  sign: null
+}
+
+export const authContext = React.createContext(auth);
+export const connContext = React.createContext(conn);
+export const userContext = React.createContext(user);
+
+
+*/

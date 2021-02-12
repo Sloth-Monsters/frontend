@@ -14,12 +14,19 @@ import TasteProfile from './pages/trails';
 import './index.css';
 import './App.css';
 
-import globalContext from './context'
+import { globalContext } from './context'
 
 class App extends Component {
 
   constructor(props) {
     super(props);
+
+    this.portis = (p,w) => {
+      this.setState( state => ({
+        portis: p,
+        web3: w
+      })
+    )}
 
     this.authenticated = (a,b) => {
       this.setState( state => ({    
@@ -29,12 +36,85 @@ class App extends Component {
       })
     )}
 
-    this.state = { // See './context.js#globul'
+    this.ceramic = (arr) => {
+      console.log(arr)
+      console.log(arr[0])
+      this.setState( state => ({
+        ceramic: arr[0],
+        idx: arr[1],
+        sign_addr: arr[2],
+        three_id: arr[3]
+      })
+    )}
+    
+    this.update = (k,v) => { this.setState( state => ({ k:v }) ) }
+
+    this.reset = () => { this.setState( 
+      state => ({ 
+             
+        /* autthentication */
+
+        isAuth: false,
+        address: null,
+        balance: null,
+        sign_addr: null,
+
+        /* connections */
+
+        ceramic: null,
+        idx: null,
+        portis: null,
+        web3: null,
+        superf: null,
+
+        /* user */
+
+        name: null,
+        email: null,
+        three_id: null,
+        sign: null,
+
+        /* promises */
+
+        portis: this.portis,
+        authenticated: this.authenticated,
+        ceramic: this.ceramic,
+        update: this.update,
+        reset: this.reset
+      })
+    )}
+
+    this.state = { // See './context.js'
+      
+      /* autthentication */
+
       isAuth: false,
-      address: '',
-      balance: 0,
+      address: null,
+      balance: null,
+      sign_addr: null,
+
+      /* connections */
+
+      ceramic: null,
+      idx: null,
+      portis: null,
+      web3: null,
+      superf: null,
+
+      /* user */
+
+      name: null,
+      email: null,
+      three_id: null,
+      sign: null,
+
+      /* promises */
+
+      portis: this.portis,
       authenticated: this.authenticated,
-      email: ''
+      ceramic: this.ceramic,
+      update: this.update,
+      reset: this.reset
     }
   }
 

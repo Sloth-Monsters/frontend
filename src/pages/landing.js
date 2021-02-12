@@ -3,17 +3,13 @@ import React, { Component } from 'react';
 import { LoginPortis } from '../components/portis';
 import { UserInfo } from '../components/info'
 
-import globalContext from '../context'
-
-import initCeramic from '../services/ceramic'
-import { sf } from '../services/web3';
+import { globalContext } from '../context'
 
 class Landing extends Component {
 
   render() {
     if(this.context.isAuth) { this.props.history.push('/dash') }
 
-    // console.log(this)
     return (
       <>
         <div className="row justify-content-center">

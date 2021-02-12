@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 
-import globalContext from '../context';
+import { globalContext } from '../context'
 
 const UserInfo = () => {
   

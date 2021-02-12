@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { UserInfo } from '../components/info';
 import { ShowPortis } from '../components/portis';
 
-import globalContext from '../context'
+import { globalContext } from '../context'
 
 import initCeramic from '../services/ceramic'
 import { sf } from '../services/web3';
@@ -12,15 +12,14 @@ class Dashboard extends Component {
   componentDidMount() {    
     if(this.context.isAuth) {
       initCeramic(this.context.address).then( (result) => {
-        console.log(result)
-        this.setState({
-          ceramic: result[0],
-          idx: result[1],
-          writes: result[1]
-        }) // TODO move to connectionContext
+        console.log(result) // TODO :: get did
+        this.context.ceramic(result)
       })
     }
-    // sf.initialize() // TODO :: init only if subscribed
+    // TODO :: init only if subscribed
+    // sf.initialize() 
+    this.context.update('superf', sf)
+    console.log(this.context)
   }
 
 

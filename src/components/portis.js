@@ -1,7 +1,7 @@
 import React, { Component, useState } from 'react';
 import { web3, portis } from '../services/web3';
 
-import globalContext from '../context'
+import { globalContext } from '../context'
 
 class ShowPortis extends Component {
   
