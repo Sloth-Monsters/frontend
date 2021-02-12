@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$comment": "TODO",
+  "title": "Social Graph Schema",
+  "type": "object",
+  "properties": {
+    "metadata": {
+      "$ref": "meta.json#"
+    },
+    "owner": {
+      "$ref": ["customer.json#", "business.json#"]
+    }
+
+  },
+  "required": [
+
+  ]
+}

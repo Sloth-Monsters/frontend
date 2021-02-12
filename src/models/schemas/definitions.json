@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Common Definitions",
+  "type": "object",
+  "properties": {
+    "definitions": {
+      "IPFSUrl": {
+        "type": "string",
+        "pattern": "^ipfs://.+",
+        "maxLength": 150
+      },
+      "CeramicUrl": {
+        "type": "string",
+        "pattern": "^ceramic://.+",
+        "maxLength": 1024
+      },
+      "positiveInteger": {
+        "type": "integer",
+        "minimum": 1
+      },
+      "limits": {
+        "name": {
+          "type": "string",
+          "maxLength": 69
+        },
+        "description": {
+          "type": "string",
+          "maxLength": 420
+        }
+      }
+    }
+  },
+  "required": [
+
+  ]
+}

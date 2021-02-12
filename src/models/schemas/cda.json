@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CDA Schema",
+  "type": "object",
+  "properties": {
+    "metadata": {
+      "$ref": "meta.json#"
+    },
+    "name": {
+      "$ref": "definitions.json#/definitions/limits/name"
+    },
+    "ABV": {
+      "type": "number"
+    },
+    "description": {
+      "$ref": "definitions.json#/definitions/limits/description"
+    },
+    "profile": {
+      "$ref": "taste.json#"
+    },
+    "art": {
+      "type": "array",
+      "items": {
+        "$ref": "image.json#"
+      },
+      "minItems": 1
+    },
+    "by": {
+      "$ref": "business.json"
+    },
+    "reviews": {
+      "type": "array",
+      "items": {
+        "$ref": "review.json#"
+      }
+    }
+  },
+  "required": [
+    "name", "ABV", "decription", "by", "art", "taste"
+  ]
+}

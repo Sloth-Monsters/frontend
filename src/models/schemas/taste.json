@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$comment": "TODO",
+  "title": "Taste Profile Schema",
+  "type": "object",
+  "properties": {
+
+  },
+  "required": [
+
+  ]
+}

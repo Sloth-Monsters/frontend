@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Image Schema",
+  "type": "object",
+  "properties": {
+    "metadata": {
+      "$ref": "meta.json#"
+    },
+    "src": { 
+      "$ref": "definitions.json#/definitions/IPFSUrl"
+    },
+    "mimeType": {
+      "type": "string",
+      "maxLength": 50
+    },
+    "width": {
+      "$ref": "definitions.json#/definitions/positiveInteger"
+    },
+    "height": {
+      "$ref": "definitions.json#/definitions/positiveInteger"
+    },
+    "size": {
+      "$ref": "definitions.json#/definitions/positiveInteger"
+    }
+  },
+  "required": [
+    "src", "mimeType", "width", "height"
+  ]
+}

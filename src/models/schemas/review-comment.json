@@ -1,0 +1,37 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Comment Schema",
+  "type": "object",
+  "properties": {
+    "metadata": {
+      "$ref": "meta.json#"
+    },
+    "from": {
+      "type": "object",
+      "$ref": ["customer.json#", "business.json#"]
+    },
+    "document": {
+      "$ref": "definitions.json#/definitions/CeramicURL"
+    },
+    "review": {
+      "type": "object",
+      "$ref": "review.json#"
+    },
+    "images": {
+      "type": "array",
+      "items": {
+        "$ref": "image.json#"
+      }
+    },
+    "posted": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "position": {
+      "$ref": "definitions.json#/definitions/positiveInteger"
+    }
+  },
+  "required": [
+    "from", "review", "posted"
+  ]
+}

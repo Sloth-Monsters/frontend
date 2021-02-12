@@ -1,0 +1,65 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "BUIDLer Schema",
+  "type": "object",
+  "properties": {
+    "metadata": {
+      "$ref": "meta.json#"
+    },
+    "name": { 
+      "$ref": "definitions.json#/definitions/limits/name"
+    },
+    "description": { 
+      "$ref": "definitions.json#/definitions/limits/description"
+    },
+    "address": {
+      "$ref": "address.json#"
+    },
+    "wallets": {
+      "type": "array",
+      "items": {
+        "$ref": "wallet.json#"
+      },
+      "minItems": 1
+    },
+    "reviews": {
+      "type": "array",
+      "items": {
+        "$ref": "review.json#"
+      }
+    },
+    "art": {
+      "type": "array",
+      "items": {
+        "$ref": "image.json#"
+      },
+      "minItems": 1
+    },
+    "products": {
+      "cda": {
+        "type": "array",
+        "items": {
+          "$ref": "cda.json#"
+        },
+        "minItems": 1
+      },
+      "reward": {
+        "type": "array",
+        "items": {
+          "$ref": "badge.json#"
+        }
+      }
+    },
+    "controllers": {
+      "$comment": "TODO :: users who can sign on behalf of business",
+      "type": "array",
+      "items": {
+        "type": "object"
+      },
+      "minItems": 1
+    }
+  },
+  "required": [
+
+  ]
+}

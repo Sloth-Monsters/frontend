@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$comment": "TODO",
+  "title": "Metadata Schema",
+  "type": "object",
+  "properties": {
+    "created": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updates": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "date-time"
+      }
+    },
+    "commits": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    }
+  },
+  "required": [
+    "created"
+  ]
+}
