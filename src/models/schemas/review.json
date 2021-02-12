@@ -34,7 +34,7 @@
     "comments": {
       "type": "array",
       "items": {
-        "$ref": "review-comment.json#"
+        "$ref": "comment.json#"
       }
     }
   },
