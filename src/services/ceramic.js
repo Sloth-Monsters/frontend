@@ -32,7 +32,8 @@ const initCeramic = async (addr) => {
     console.log(authProvider)
     console.log(threeIdConnect)
     console.log(provider)
-    resolve([ceramic, idx, addresses[0]])
+    console.log(ceramic.context.did._id)
+    resolve([ceramic, idx, addresses[0], ceramic.context.did._id])
   });
 }
 

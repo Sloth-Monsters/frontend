@@ -26,9 +26,9 @@ let globul = {
 
   /* promises */
 
-  portis: () => {},
+  setPortis: () => {},
   authenticated: () => {},
-  ceramic: () => {},
+  setCeramic: () => {},
   update: () => {},
   reset: () => {}
 }

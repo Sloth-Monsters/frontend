@@ -23,7 +23,7 @@ class App extends Component {
   constructor(props) {
     super(props);
 
-    this.portis = (p,w) => {
+    this.setPortis = (p,w) => {
       this.setState( state => ({
         portis: p,
         web3: w
@@ -38,7 +38,7 @@ class App extends Component {
       })
     )}
 
-    this.ceramic = (arr) => {
+    this.setCeramic = (arr) => {
       console.log(arr)
       console.log(arr[0])
       this.setState( state => ({
@@ -112,9 +112,9 @@ class App extends Component {
 
       /* promises */
 
-      portis: this.portis,
+      setPortis: this.setPortis,
       authenticated: this.authenticated,
-      ceramic: this.ceramic,
+      setCeramic: this.setCeramic,
       update: this.update,
       reset: this.reset
     }
